@@ -4,102 +4,235 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --border-color: #334155;
+            --code-bg: #0f172a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
+
         .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 48px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
         }
+
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+        }
+
         h1 {
-            color: #1a73e8;
-            border-bottom: 2px solid #e8eaed;
-            padding-bottom: 10px;
-            margin-top: 0;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            color: var(--text-primary);
         }
-        h2 {
-            color: #202124;
-            margin-top: 25px;
-            font-size: 1.25rem;
-        }
+
         p {
-            margin-bottom: 15px;
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+            margin-bottom: 20px;
         }
-        ul {
-            background-color: #f8f9fa;
-            border-left: 4px solid #1a73e8;
-            padding: 15px 15px 15px 35px;
-            margin: 15px 0;
-            border-radius: 0 4px 4px 0;
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 36px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        li {
-            margin-bottom: 10px;
+
+        .services-grid {
+            display: grid;
+            gap: 16px;
+            margin-bottom: 24px;
         }
-        li:last-child {
-            margin-bottom: 0;
+
+        .service-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
         }
+
+        .service-card strong {
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .permission-list {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .permission-item {
+            background: rgba(15, 23, 42, 0.4);
+            border-left: 3px solid var(--accent-color);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+        }
+
         code {
-            background-color: #e8eaed;
-            padding: 2px 6px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            background: var(--code-bg);
+            padding: 2px 8px;
             border-radius: 4px;
-            font-family: monospace;
-            font-size: 0.9em;
-            color: #c5221f;
+            border: 1px solid var(--border-color);
+            display: inline-block;
+            margin-bottom: 4px;
         }
+
+        .permission-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
         a {
-            color: #1a73e8;
+            color: var(--accent-color);
             text-decoration: none;
+            transition: color 0.2s;
         }
+
         a:hover {
+            color: var(--accent-hover);
             text-decoration: underline;
         }
-        .contact {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #e8eaed;
+
+        footer {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            font-weight: 500;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 24px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Política de privacidad</h1>
+    <main class="container">
+        <header>
+            <h1>Política de Privacidad</h1>
+        </header>
         
-        <p>Su privacidad es lo más importante para mi, por ello expondré de forma clara y concisa como se tratan los datos que se recogen en mis apps.</p>
-        
-        <p>Lo primero de todo que debes saber es que no recabo ningún dato sensible ni privado para mi uso personal ni para venderlos o compartirlos con terceros y que todos los datos recolectados son usados para que tanto los servicios de Google Admob como los de Google Analytics puedan funcionar (puedes ver las políticas de privacidad de Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">aquí</a>).</p>
+        <section>
+            <p>Su privacidad es lo más importante para mí. Por ello, expongo de forma clara y concisa cómo se tratan los datos recogidos en mis aplicaciones.</p>
+            
+            <p>No recabo ningún dato sensible ni privado para uso personal, ni para vender o compartir con terceros. Todos los datos recolectados son utilizados exclusivamente para el correcto funcionamiento de los servicios de Google AdMob y Google Analytics (puede consultar las políticas de privacidad de Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">aquí</a>).</p>
+        </section>
 
-        <h2>Para qué se usa cada servicio:</h2>
-        <ul>
-            <li><strong>Admob:</strong> es el responsable de mostrar los anuncios en la aplicación basándose en sus gustos, su edad, su localización y las webs que ha visitado recientemente.</li>
-            <li><strong>Google Analytics:</strong> lo uso para medir el rendimiento de las diferentes funciones y para con ello mejorar las aplicaciones en el futuro (como por ejemplo, puedo ver desde que países hay más descargas para decidir si es necesario traducir la app a diferentes idiomas).</li>
-        </ul>
+        <section>
+            <h2>Uso de Servicios de Terceros</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <strong>AdMob</strong>
+                    <p style="margin: 0;">Responsable de mostrar anuncios adaptados en la aplicación basándose en sus gustos, edad, localización y sitios web visitados recientemente.</p>
+                </div>
+                <div class="service-card">
+                    <strong>Google Analytics</strong>
+                    <p style="margin: 0;">Utilizado para medir el rendimiento de las funciones y mejorar las aplicaciones en el futuro (por ejemplo, analizar el número de descargas por país para evaluar nuevas traducciones).</p>
+                </div>
+            </div>
+        </section>
 
-        <h2>Qué permisos usan mis apps:</h2>
-        <ul>
-            <li><code>android.permission.INTERNET</code>: usado para obtener conexión a internet y poder mostrar los anuncios.</li>
-            <li><code>android.permission.ACCESS_NETWORK_STATE</code>: sirve para comprobar si el usuario tiene conexión a internet.</li>
-            <li><code>android.permission.WRITE_EXTERNAL_STORAGE</code>: usado para poder crear las bases de datos de las aplicaciones y poder guardar los sonidos.</li>
-            <li><code>android.permission.WRITE_SETTINGS</code>: se usa para poder modificar los ajustes del sistema y en este caso, para poder modificar tanto el tono de llamada como el de notificación.</li>
-            <li><code>android.permission.MODIFY_AUDIO_SETTINGS</code>: empleado para poder modificar los tonos de llamada y notificación en versiones iguales o superiores a android 6.0.</li>
-        </ul>
+        <section>
+            <h2>Permisos Requeridos en las Aplicaciones</h2>
+            <ul class="permission-list">
+                <li class="permission-item">
+                    <code>android.permission.INTERNET</code>
+                    <div class="permission-desc">Permite obtener conexión a internet para cargar y mostrar los anuncios.</div>
+                </li>
+                <li class="permission-item">
+                    <code>android.permission.ACCESS_NETWORK_STATE</code>
+                    <div class="permission-desc">Verifica la disponibilidad de conexión a internet en el dispositivo.</div>
+                </li>
+                <li class="permission-item">
+                    <code>android.permission.WRITE_EXTERNAL_STORAGE</code>
+                    <div class="permission-desc">Permite crear la base de datos de la aplicación y almacenar archivos de audio localmente.</div>
+                </li>
+                <li class="permission-item">
+                    <code>android.permission.WRITE_SETTINGS</code>
+                    <div class="permission-desc">Permite modificar los ajustes del sistema para establecer tonos de llamada y de notificación personalizados.</div>
+                </li>
+                <li class="permission-item">
+                    <code>android.permission.MODIFY_AUDIO_SETTINGS</code>
+                    <div class="permission-desc">Permite modificar los tonos de llamada y notificación en dispositivos con Android 6.0 o superior.</div>
+                </li>
+            </ul>
 
-        <p>Mis aplicaciones no leen ni guardan ningún dato del usuario almacenado ni en la tarjeta micro sd ni en la memoria interna del teléfono.</p>
+            <p>Las aplicaciones no acceden, leen ni almacenan ningún tipo de dato personal del usuario ubicado en la tarjeta microSD o en la memoria interna del dispositivo.</p>
+        </section>
 
-        <div class="contact">
-            <p>Si tiene alguna pregunta o sugerencia sobre la política de privacidad, por favor póngase en contacto con:</p>
-            <p><a href="mailto:carlostorresapps@outlook.com">carlostorresapps@outlook.com</a></p>
-        </div>
-    </div>
+        <footer>
+            <p>Para cualquier pregunta o sugerencia sobre esta política de privacidad, puede ponerse en contacto directamente:</p>
+            <a href="mailto:carlostorresapps@outlook.com" class="contact-email">carlostorresapps@outlook.com</a>
+        </footer>
+    </main>
+
+</body>
+</html>
 
 </body>
 </html>
